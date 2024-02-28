@@ -1,0 +1,7 @@
+{
+    "name" : "CC MQTT-SN Protocol",
+    "desc" : [
+        "MQTT-SN protocol."
+    ],
+    "type" : "protocol"
+}
