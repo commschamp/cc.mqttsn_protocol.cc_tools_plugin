@@ -7,7 +7,6 @@
 #include "cc_tools_qt_plugin/cc_mqttsn/message/Connack.h"
 #include "cc_tools_qt_plugin/cc_mqttsn/message/Connect.h"
 #include "cc_tools_qt_plugin/cc_mqttsn/message/Disconnect.h"
-#include "cc_tools_qt_plugin/cc_mqttsn/message/Fwd.h"
 #include "cc_tools_qt_plugin/cc_mqttsn/message/Gwinfo.h"
 #include "cc_tools_qt_plugin/cc_mqttsn/message/Pingreq.h"
 #include "cc_tools_qt_plugin/cc_mqttsn/message/Pingresp.h"
@@ -41,7 +40,7 @@ namespace cc_mqttsn
 namespace input
 {
 
-using AllMessages =
+using ProtMessages =
     std::tuple<
         cc_tools_qt_plugin::cc_mqttsn::message::Advertise,
         cc_tools_qt_plugin::cc_mqttsn::message::Searchgw,
@@ -69,8 +68,7 @@ using AllMessages =
         cc_tools_qt_plugin::cc_mqttsn::message::Willtopicupd,
         cc_tools_qt_plugin::cc_mqttsn::message::Willtopicresp,
         cc_tools_qt_plugin::cc_mqttsn::message::Willmsgupd,
-        cc_tools_qt_plugin::cc_mqttsn::message::Willmsgresp,
-        cc_tools_qt_plugin::cc_mqttsn::message::Fwd
+        cc_tools_qt_plugin::cc_mqttsn::message::Willmsgresp
     >;
 
 } // namespace input

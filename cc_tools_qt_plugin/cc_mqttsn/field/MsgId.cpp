@@ -50,6 +50,7 @@ QVariantMap createProps_msgId(const char* name, bool serHidden)
             .add("WILLTOPICRESP", 27)
             .add("WILLMSGUPD", 28)
             .add("WILLMSGRESP", 29)
+            .add("FWD", 254)
             .asMap();
 }
 

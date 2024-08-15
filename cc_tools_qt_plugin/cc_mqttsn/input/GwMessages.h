@@ -41,7 +41,7 @@ namespace cc_mqttsn
 namespace input
 {
 
-using AllMessages =
+using GwMessages =
     std::tuple<
         cc_tools_qt_plugin::cc_mqttsn::message::Advertise,
         cc_tools_qt_plugin::cc_mqttsn::message::Searchgw,
