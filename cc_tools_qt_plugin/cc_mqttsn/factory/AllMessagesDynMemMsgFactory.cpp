@@ -57,6 +57,7 @@ AllMessagesDynMemMsgFactory::MsgPtr AllMessagesDynMemMsgFactory::createMsg(MsgId
         case ::cc_mqttsn::MsgId_Willtopicresp: return MsgPtr(new cc_tools_qt_plugin::cc_mqttsn::message::Willtopicresp);
         case ::cc_mqttsn::MsgId_Willmsgupd: return MsgPtr(new cc_tools_qt_plugin::cc_mqttsn::message::Willmsgupd);
         case ::cc_mqttsn::MsgId_Willmsgresp: return MsgPtr(new cc_tools_qt_plugin::cc_mqttsn::message::Willmsgresp);
+        case ::cc_mqttsn::MsgId_Fwd: return MsgPtr(new cc_tools_qt_plugin::cc_mqttsn::message::Fwd);
         default: break;
     }
 
@@ -95,6 +96,7 @@ std::size_t AllMessagesDynMemMsgFactory::msgCount(MsgIdParamType id) const
         case ::cc_mqttsn::MsgId_Willtopicresp: return 1U;
         case ::cc_mqttsn::MsgId_Willmsgupd: return 1U;
         case ::cc_mqttsn::MsgId_Willmsgresp: return 1U;
+        case ::cc_mqttsn::MsgId_Fwd: return 1U;
         default: break;
     }
 

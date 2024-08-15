@@ -59,6 +59,7 @@ function (cc_plugin_core)
     set (name ${CORE_LIB_NAME})
     set (src
         cc_tools_qt_plugin/cc_mqttsn/field/ClientId.cpp
+        cc_tools_qt_plugin/cc_mqttsn/field/Ctrl.cpp
         cc_tools_qt_plugin/cc_mqttsn/field/Data.cpp
         cc_tools_qt_plugin/cc_mqttsn/field/Duration.cpp
         cc_tools_qt_plugin/cc_mqttsn/field/Flags.cpp
@@ -67,6 +68,7 @@ function (cc_plugin_core)
         cc_tools_qt_plugin/cc_mqttsn/field/MessageId.cpp
         cc_tools_qt_plugin/cc_mqttsn/field/MsgId.cpp
         cc_tools_qt_plugin/cc_mqttsn/field/MsgLengthField.cpp
+        cc_tools_qt_plugin/cc_mqttsn/field/NodeId.cpp
         cc_tools_qt_plugin/cc_mqttsn/field/ProtocolId.cpp
         cc_tools_qt_plugin/cc_mqttsn/field/Qos.cpp
         cc_tools_qt_plugin/cc_mqttsn/field/Radius.cpp
@@ -80,6 +82,7 @@ function (cc_plugin_core)
         cc_tools_qt_plugin/cc_mqttsn/message/Connack.cpp
         cc_tools_qt_plugin/cc_mqttsn/message/Connect.cpp
         cc_tools_qt_plugin/cc_mqttsn/message/Disconnect.cpp
+        cc_tools_qt_plugin/cc_mqttsn/message/Fwd.cpp
         cc_tools_qt_plugin/cc_mqttsn/message/Gwinfo.cpp
         cc_tools_qt_plugin/cc_mqttsn/message/Pingreq.cpp
         cc_tools_qt_plugin/cc_mqttsn/message/Pingresp.cpp
