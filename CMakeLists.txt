@@ -56,67 +56,49 @@ cc_msvc_force_warn_opt(/W4)
 
 include(GNUInstallDirs)
 
-set (CORE_LIB_NAME "cc_tools_qt_plugin_cc_mqttsn_protocol_core")
+set (INTERFACE_LIB_PREFIX "cc_tools_qt_plugin_cc_mqttsn")
 
 ######################################################################
 
-function (cc_plugin_core)
-    set (name ${CORE_LIB_NAME})
+function (cc_plugin_Message)
+    set (name ${INTERFACE_LIB_PREFIX}_Message)
     set (src
-        cc_tools_qt_plugin/cc_mqttsn/field/ClientId.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/Ctrl.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/Data.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/Duration.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/Flags.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/GwAdd.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/GwId.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/MessageId.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/MsgId.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/MsgLengthField.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/NodeId.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/ProtocolId.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/Qos.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/Radius.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/ReturnCode.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/TopicId.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/TopicIdType.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/TopicName.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/WillMsg.cpp
-        cc_tools_qt_plugin/cc_mqttsn/field/WillTopic.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Advertise.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Connack.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Connect.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Disconnect.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Fwd.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Gwinfo.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Pingreq.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Pingresp.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Puback.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Pubcomp.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Publish.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Pubrec.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Pubrel.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Regack.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Register.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Searchgw.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Suback.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Subscribe.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Unsuback.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Unsubscribe.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Willmsg.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Willmsgreq.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Willmsgresp.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Willmsgupd.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Willtopic.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Willtopicreq.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Willtopicresp.cpp
-        cc_tools_qt_plugin/cc_mqttsn/message/Willtopicupd.cpp
-        cc_tools_qt_plugin/cc_mqttsn/Message.cpp
-        cc_tools_qt_plugin/cc_mqttsn/frame/FrameTransportMessage.cpp
-        cc_tools_qt_plugin/cc_mqttsn/factory/AllMessagesDynMemMsgFactory.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/Message.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Advertise.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Connack.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Connect.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Disconnect.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Fwd.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Gwinfo.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Pingreq.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Pingresp.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Puback.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Pubcomp.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Publish.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Pubrec.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Pubrel.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Regack.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Register.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Searchgw.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Suback.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Subscribe.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Unsuback.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Unsubscribe.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Willmsg.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Willmsgreq.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Willmsgresp.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Willmsgupd.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Willtopic.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Willtopicreq.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Willtopicresp.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/message/Willtopicupd.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/frame/FrameTransportMessage.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/frame/Frame.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/factory/MsgFactory.cpp
     )
 
     add_library (${name} STATIC ${src})
+    set_target_properties(${name} PROPERTIES POSITION_INDEPENDENT_CODE TRUE)
     target_link_libraries (${name} PUBLIC cc::cc_mqttsn cc::comms cc::cc_tools_qt Qt${OPT_QT_MAJOR_VERSION}::Widgets Qt${OPT_QT_MAJOR_VERSION}::Core)
     target_include_directories (${name} PUBLIC ${PROJECT_SOURCE_DIR})
     target_compile_options(${name} PRIVATE
@@ -124,12 +106,11 @@ function (cc_plugin_core)
         $<$<CXX_COMPILER_ID:GNU>:-ftemplate-depth=2048 -fconstexpr-depth=4096 -Wno-unused-local-typedefs>
         $<$<CXX_COMPILER_ID:Clang>:-ftemplate-depth=2048 -fconstexpr-depth=4096 -fbracket-depth=2048 -Wno-unused-local-typedefs>
     )
-
 endfunction()
 
 ######################################################################
 
-function (cc_plugin protocol has_config_widget)
+function (cc_plugin protocol interface)
     string(TOLOWER "cc_tools_plugin_${protocol}" name)
 
     if (NOT "${name}" MATCHES ".*_protocol$")
@@ -153,22 +134,19 @@ function (cc_plugin protocol has_config_widget)
         cc_tools_qt_plugin/cc_mqttsn/plugin/Plugin_${protocol}.h
     )
 
-    if (has_config_widget)
-        list (APPEND src cc_tools_qt_plugin/cc_mqttsn/plugin/ConfigWidget_${protocol}.cpp)
-    endif ()
-
     set(extra_link_opts)
-    if (CMAKE_COMPILER_IS_GNUCC)
+    if ((CMAKE_COMPILER_IS_GNUCC) OR ("${CMAKE_CXX_COMPILER_ID}" MATCHES "Clang"))
         set(extra_link_opts "-Wl,--no-undefined")
     endif ()
 
-    add_library (${name} MODULE ${src} ${moc})
-    target_link_libraries (${name} ${CORE_LIB_NAME} cc::cc_tools_qt Qt${OPT_QT_MAJOR_VERSION}::Widgets Qt${OPT_QT_MAJOR_VERSION}::Core ${extra_link_opts})
+    add_library (${name} MODULE ${src})
+    target_link_libraries (${name} ${INTERFACE_LIB_PREFIX}_${interface} cc::cc_tools_qt Qt${OPT_QT_MAJOR_VERSION}::Core ${extra_link_opts})
     target_compile_options(${name} PRIVATE
         $<$<CXX_COMPILER_ID:MSVC>:/bigobj /wd4127 /wd5054>
         $<$<CXX_COMPILER_ID:GNU>:-ftemplate-depth=2048 -fconstexpr-depth=4096>
         $<$<CXX_COMPILER_ID:Clang>:-ftemplate-depth=2048 -fconstexpr-depth=4096 -fbracket-depth=2048>
     )
+    target_include_directories (${name} PRIVATE ${PROJECT_SOURCE_DIR})
 
     install (
         TARGETS ${name}
@@ -194,6 +172,6 @@ if (TARGET cc::cc_tools_qt)
     include_directories (${cc_inc})
 endif ()
 
-cc_plugin_core()
+cc_plugin_Message()
 
-cc_plugin ("CC_MQTT_SN" FALSE)
+cc_plugin ("CC_MQTT_SN" "Message")
