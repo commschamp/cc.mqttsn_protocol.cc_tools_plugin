@@ -92,9 +92,9 @@ function (cc_plugin_Message)
         cc_tools_qt_plugin/Message/cc_mqttsn/message/Willtopicreq.cpp
         cc_tools_qt_plugin/Message/cc_mqttsn/message/Willtopicresp.cpp
         cc_tools_qt_plugin/Message/cc_mqttsn/message/Willtopicupd.cpp
+        cc_tools_qt_plugin/Message/cc_mqttsn/factory/MsgFactory.cpp
         cc_tools_qt_plugin/Message/cc_mqttsn/frame/FrameTransportMessage.cpp
         cc_tools_qt_plugin/Message/cc_mqttsn/frame/Frame.cpp
-        cc_tools_qt_plugin/Message/cc_mqttsn/factory/MsgFactory.cpp
     )
 
     add_library (${name} STATIC ${src})
