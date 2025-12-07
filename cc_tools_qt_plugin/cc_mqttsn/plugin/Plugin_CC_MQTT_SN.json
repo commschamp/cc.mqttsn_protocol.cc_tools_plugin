@@ -3,5 +3,6 @@
     "desc" : [
         "MQTT-SN protocol."
     ],
+    "version": "v3.0.4",
     "type" : "protocol"
 }
